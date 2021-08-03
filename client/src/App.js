@@ -29,7 +29,7 @@ function App() {
 	useEffect(() => {
 		const getPins = async () => {
 			try {
-				const res = await axios.get('http://localhost:5000/api/pins');
+				const res = await axios.get('/pins');
 				setPins(res.data);
 				// console.log(res.data)
 
@@ -61,7 +61,7 @@ function App() {
 				username: currentUser,
 				title, desc, rating, latitude:  newPlace.lat, long: newPlace.long
 			}
-			const getValue = await axios.post('http://localhost:5000/api/pins', newPin);
+			const getValue = await axios.post('/pins', newPin);
 			setPins([...pins, getValue.data])
 			setNewPlace(null)
 		} catch (error) {

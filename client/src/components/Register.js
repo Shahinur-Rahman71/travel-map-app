@@ -18,7 +18,7 @@ const Register = ({setshowregister}) => {
                 email: emailRef.current.value,
                 password: passRef.current.value
             }
-            await axios.post('http://localhost:5000/api/users/register', newUser);
+            await axios.post('/users/register', newUser);
             setFail(false)
             setSuccess(true);
 
